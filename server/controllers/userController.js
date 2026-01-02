@@ -20,11 +20,11 @@ const cloudinary = require('cloudinary');
  */
 exports.registerUser = asyncErrorHandler(async (req, res, next) => {
     // Upload user avatar to Cloudinary
-    const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
+    /* const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
         folder: "avatars",
         width: 150,
         crop: "scale",
-    });
+    });*/
 
     const { name, email, gender, password } = req.body;
 
@@ -34,10 +34,10 @@ exports.registerUser = asyncErrorHandler(async (req, res, next) => {
         email,
         gender,
         password,
-        avatar: {
+       /* avatar: {
             public_id: myCloud.public_id,
             url: myCloud.secure_url,
-        },
+        },*/
     });
 
     // Send JWT token in response

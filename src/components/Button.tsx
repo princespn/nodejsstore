@@ -1,18 +1,25 @@
-import React from 'react'
-
-interface Props {
-    title?: string;
-    titleClassName?: string;
-    color?: string;
+interface ButtonProps {
+    title: string;
+    onClick?: () => void;
     mainClassName?: string;
-}
-
-const Button = (props: Props) => {
+    titleClassName?: string;
+  }
+  
+  const Button = ({
+    title,
+    onClick,
+    mainClassName = '',
+    titleClassName = '',
+  }: ButtonProps) => {
     return (
-        <div className={`${props.mainClassName} w-52 h-16 flex items-center justify-center rounded-xl cursor-pointer`}>
-            <p className={`${props.titleClassName} text-lg text-textColor`}>{props.title}</p>
-        </div>
-    )
-}
-
-export default Button
+      <button
+        onClick={onClick}
+        className={`px-4 py-2 rounded transition ${mainClassName}`}
+      >
+        <span className={titleClassName}>{title}</span>
+      </button>
+    );
+  };
+  
+  export default Button;
+  

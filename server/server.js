@@ -6,7 +6,9 @@
 
 const app = require('./app');
 const connectDatabase = require('./config/database');
-const cloudinary = require('cloudinary');
+//const cloudinary = require('cloudinary');
+const cloudinary = require('cloudinary').v2;
+
 
 // Server Configuration
 const PORT = process.env.PORT || 4001;
@@ -19,7 +21,7 @@ process.on('uncaughtException', (err) => {
 });
 
 // Database Connection
-// connectDatabase(); // Currently commented out - uncomment to enable database connection
+ connectDatabase(); // Currently commented out - uncomment to enable database connection
 
 // Cloudinary Configuration for Image/File Management
 cloudinary.config({

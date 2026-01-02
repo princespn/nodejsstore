@@ -7,5 +7,7 @@ const connectDatabase = () => {
             console.log("Mongoose Connected");
         });
 }
-//mongoose.connection.createCollection("users");
+
+//mongoose.connection.createCollection("adminwarehouse");
 module.exports = connectDatabase;
+

@@ -3,36 +3,20 @@
  * Root component that renders the complete PetShop landing page
  * Organizes all sections in a logical flow from top to bottom
  */
+import Home from './pages/Home';
+import Dashboard from './components/admin/Dashboard';
+import { Routes, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Partners from './components/Partners'
-import Features from './components/Features'
-import Testimonials from './components/Testimonials'
-import Video from './components/Video'
-import ContactUs from './components/ContactUs'
-import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div className='main'>
-      <Navbar />
+<Routes>
+<Route path="/" element={<Home/>} />
+<Route path="/dashboard" element={<Dashboard/>} />
+</Routes>
 
-      <Hero />
-
-      <Video />
-
-      <Partners />
-
-      <Features />
-
-      <Testimonials />
-
-      <ContactUs />
-
-      <Footer />
-    </div>
   )
 }
 
 export default App
+

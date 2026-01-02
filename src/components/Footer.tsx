@@ -20,6 +20,7 @@ const Footer = () => {
                     alt='Social'
                 />
             </div>
+            
         );
     }
 
